@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	<meta charset="UTF-8">
+	<title>Zipfian Capstone Project</title>
+
+<style type="text/css">
+   body {background-image: url("static/blue.jpg");}
+   p, h2, h3 {color:white;}
+   table {background-color:rgba(55, 55, 55, 0.55);}
+</style>
+
+<style type="text/css">
+    .bs-example{
+    	margin: 10px;
+    }
+</style>
+
+</head>
+<body>
+	<p><h2> These phrases appeared the most in {{employer}} reviews : </h2></p>
+
+<div class="bs-example">
+    <img src="{{pic}}" alt="word cloud" style="width:600px;height:400px">
+</div>  
+	
+  <h3>Try another company!</h3>
+    <div class='wordcloud'>
+        <form action="/wordcloud" method='POST' >
+                <input type="text" name="user_input" placeholder="Enter company name here" style="width: 500px; padding:2px"/>
+                <input type="submit" class="btn btn-primary" />
+    </div>
+
+	   <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	<meta charset="UTF-8">
+	<title>Zipfian Capstone Project</title>
+
+<style>
+
+  /*body { background: lightblue;}*/
+  body {background-image: url("static/blue.jpg");}
+  div {background-color:rgba(55, 55, 55, 0.75);}
+  h1, h4, a { margin:10px;
+        color:white;}
+  form { 
+    margin: 10px;
+  }
+.attributes {
+
+  }
+.wordcloud {
+
+}
+
+</style>
+
+</head>
+
+<body>
+    <div>
+    	<h1>Glassy Crawl</h1>
+        <h4>Return the Top 10 employers by keyword match (i.e., work life balance, pay, perks)</h4>
+    </div>
+    <div class='attributes'>
+        <form action="/predict" method='POST' >
+            <input type="text" name="user_input" placeholder="Enter attributes or company name here" style="width: 500px; padding:2px"/>
+            <input type="submit" class="btn btn-primary" />
+        </form>
+    </div>
+
+
+
+<div>
+      <h1>Word Clouds</h1>
+        <h4>Return top words within employee reviews for any employer!</h4>
+    </div>
+    <div class='wordcloud'>
+        <form action="/wordcloud" method='POST' >
+                <input type="text" name="user_input" placeholder="Enter company name here" style="width: 500px; padding:2px"/>
+                <input type="submit" class="btn btn-primary" />
+    </div>
+
+
+	   <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <a href="http://www.glassdoor.com" font color="white">Find your dream job on Glassdoor!<img src="" alt=""></a>
+</body>
+
+</html>
