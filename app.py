@@ -29,6 +29,7 @@ df = pd.read_csv('data/glass_reviews.csv')
 df['company'] = df['_pageUrl'].apply(lambda x: x.split('/')[4].split('-Reviews')[0].replace('-',' '))
 
 
+
 # Homepage with form on it.
 #================================================
 @app.route('/')
@@ -40,7 +41,6 @@ def index():
 def featurize():
     n = 100   # number of articles per topic
     employer = request.form['user_input']
-    employer = employer.capitalize()
     ftopic = df[df['company']==employer].head(n)
     text = list(ftopic['cons'].values)
     text = " ".join(text)
@@ -49,21 +49,23 @@ def featurize():
     tokens = [word.lower() for sent in sent_tokenize(text) \
              for word in word_tokenize(sent)]
    # remove stopwords
-    stop = stopwords.words('english')
+
    # some extra stop words not present in stopwords
+    stop = stopwords.words('english')
     stop += ['said', 'would', 's', 'also', 'U', 'mr', 're', 'may', 'one', 'two', 'buy', 'much', \
             'take', 'might', 'say', 'new', 'year', 'many','etc', 'll']
+    stop += str(employer)
 
     tokens = [token for token in tokens if token not in stop]
    # remove words less than three letters
     tokens = [word for word in tokens if len(word) >= 2]
     string = " ".join(tokens)
     wordcloud = WordCloud(font_path='/Library/Fonts/Arial Rounded Bold.ttf').generate(string)
-    plt.figure(figsize=(20,15))
+    plt.figure(figsize=(50,30))
     plt.imshow(wordcloud)
     plt.axis("off")
     name = 'static/' +str(employer) + '.png'
-    pic = plt.savefig(name, bbox_inches='tight')
+    pic = plt.savefig(name, bbox_inches='tight',transparent = True)
 
     return render_template('template_wordcloud.html', pic = name, employer=employer)
 
