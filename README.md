@@ -19,4 +19,4 @@ Through the course of the project, I learned a lot about web development using H
 
 Python Libraries used include Sklearn, Pandas, NLTK, Flask
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/Glassdoor.png "Glassdoor")
