@@ -3,7 +3,7 @@
 
 ###The Project
 
-This project was designed to help job hunters gain a better understanding of companies on Glassdoor by attempting to summarizing employee user reviews.
+This project was designed to help job hunters gain a better understanding of companies on Glassdoor by attempting to summarize employee reviews.
 
 The web app that I created is called Glassy Crawl, and has dual functionality. Users can serch for companies based on certain attributes such as 
 
