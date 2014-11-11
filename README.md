@@ -1,6 +1,4 @@
-glassycrawl
-===========
-
+===================
 #Welcome to the Glassdoor Review Summarizer. 
 
 ###The Project
