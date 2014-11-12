@@ -17,10 +17,10 @@ I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model.
 
 ###The code
 
-Python Libraries used include Sklearn, Pandas, NLTK, Flask
+The code for this project was written primarily in python, leveraging the following libraires: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
 
-Through the course of the project, I learned a lot about web development using HTML, CSS, JavaScript and Python Flask.
-
-
+###Using GlassyCrawl
+1. By Attribute - type one or more attributes (separated by commas) that you are looking for in your next employer.
+2. By Employer - search for employers within the database. Be sure to select the employer from the dropdown menu that populates.
 
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/Glassdoor.png "Glassdoor")
