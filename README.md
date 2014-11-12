@@ -5,7 +5,7 @@
 
 This project was designed to help job hunters gain a better understanding of overall employee sentiment by looking at Glassdoor reviews from present and past employees. 
 
-The web app that I created is called Glassy Crawl, and has dual functionality. Users can search for companies based on certain attributes such as 
+The web app that I created is called Glassy Crawl, and has dual functionality. Users can search for companies based on certain attributes such as work life balance, great coworkers or free lunches. 
 
 ###The Data Collection Process
 
