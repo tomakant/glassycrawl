@@ -9,7 +9,7 @@ The web app that I created is called Glassy Crawl, and has dual functionality. U
 
 ###The Data Collection Process
 
-I built a web crawler utilizing import.io to scrape Glassdoor.com employee reviews for about 1,000 companies. The import.io tool allowed me to train examples and pull out elements from a company's review page based on HTML/CSS properties. After five training examples were given, import.io crawls Glassdoor for other company review pages with similar HTML and CSS tags as the training examples. I set up the crawler to grab only the first 300 reviews for each employer, which can then be saved as a .csv or .json for exporting. 
+I built a web crawler utilizing import.io to scrape Glassdoor.com employee reviews for about 1,000 companies. The import.io tool allowed me to train examples and pull out elements from a company's review page based on HTML/CSS properties. After five training examples were given, import.io crawls Glassdoor for other company review pages with similar HTML and CSS tags as the training examples. I set up the crawler to grab only the first 300 reviews for each employer, which can then be saved as a *.csv* or _.json_ file for exporting. 
 
 I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model. Users can specify multiple attributes that they are looking for in an employer and run the search. The vectorizer will then search the employer database where those attributes appeared the most. 
 
