@@ -17,7 +17,7 @@ I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model.
 
 ###The code
 
-The code for this project was written primarily in python, leveraging the following libraires: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
+The code for this project was written primarily in python, leveraging the following libraries: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
 
 ###Using GlassyCrawl
 1. By Attribute - type one or more attributes (separated by commas) that you are looking for in your next employer.
