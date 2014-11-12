@@ -15,8 +15,10 @@ My model is based on a Tf-Idf Vectorizer, which vectorizes all
 
 ###The code
 
+Python Libraries used include Sklearn, Pandas, NLTK, Flask
+
 Through the course of the project, I learned a lot about web development using HTML, CSS, JavaScript and Python Flask.
 
-Python Libraries used include Sklearn, Pandas, NLTK, Flask
+
 
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/Glassdoor.png "Glassdoor")
