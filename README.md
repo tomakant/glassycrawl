@@ -9,9 +9,11 @@ The web app that I created is called Glassy Crawl, and has dual functionality. U
 
 ###The Data Collection Process
 
-I built a web crawler utilizing import.io to scrape Glassdoor.com employee reviews for about 1,000 companies. 
+I built a web crawler utilizing import.io to scrape Glassdoor.com employee reviews for about 1,000 companies. The reviews were then downloaded into a .csv file and loaded into a Pandas DataFrame. 
 
-My model is based on a Tf-Idf Vectorizer, which vectorizes all 
+I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model. Users can specify multiple attributes that they are looking for in an employer and run the search. The vectorizer will then search the employer database where those attributes appeared the most. 
+
+![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/import.io.png "import.io")
 
 ###The code
 
