@@ -21,9 +21,13 @@ The code for this project was written primarily in python, leveraging the follow
 
 ###Using GlassyCrawl
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/web_app.png "WebApp")
-1. By Attribute - type one or more attributes (separated by commas) that you are looking for in your next employer.
+
+####By Attribute
+1. Type one or more attributes (separated by commas) that you are looking for in your next employer.
 
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/attributes.png "Attributes")
-2. By Employer - search for employers within the database. Be sure to select the employer from the dropdown menu that populates.
+
+####By Employer
+2. Search for employers within the database. Be sure to select the employer from the dropdown menu that populates.
 
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/pros_cons.png "ProsCons")
