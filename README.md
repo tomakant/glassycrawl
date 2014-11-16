@@ -11,7 +11,7 @@ I built a web crawler utilizing import.io to scrape Glassdoor.com employee revie
 
 I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model. Users can specify multiple attributes that they are looking for in an employer and run the search. The vectorizer will then search the employer database where those attributes appeared the most. 
 
-![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/import.io.png "import.io" = 100x50)
+![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/import.io.png = 100 x 50 "import.io")
 
 ###The code
 
