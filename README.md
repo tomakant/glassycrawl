@@ -20,7 +20,7 @@ I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model.
 The code for this project was written primarily in python, leveraging the following libraries: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
 
 ###Using GlassyCrawl
-[alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/web_app.png "WebApp")
+![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/web_app.png "WebApp")
 
 
 ####By Attribute
