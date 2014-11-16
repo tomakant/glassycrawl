@@ -3,9 +3,7 @@
 
 ###The Project
 
-This project was designed to help job hunters gain a better understanding of overall employee sentiment by looking at Glassdoor reviews from present and past employees. 
-
-The web app that I created is called Glassy Crawl, and has dual functionality: 1. Search for companies based on certain attributes such as work life balance, great coworkers or free lunches. 2. Search for individual employers to return word clouds of frequently occurring words in pros and cons reviews.
+This project was designed to help job hunters gain a better understanding of overall employee sentiment by looking at Glassdoor reviews from present and past employees. Glassdoor is a great resource for learning more about what employees are saying about their companies but it is hard to gauge what is being said the most in both positive and negative reviews. 
 
 ###The Data Collection Process
 
@@ -20,6 +18,8 @@ I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model.
 The code for this project was written primarily in python, leveraging the following libraries: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
 
 ###Using GlassyCrawl
+Search for companies based on certain attributes such as work life balance, great coworkers or free lunches. Search for individual employers to return word clouds of frequently occurring words in pros and cons reviews.
+
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/_images/web_app.png "WebApp")
 
 
