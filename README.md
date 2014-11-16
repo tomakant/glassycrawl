@@ -3,9 +3,9 @@
 
 ###The Project
 
-This project was designed to help job hunters gain a better understanding of companies on Glassdoor by attempting to summarize employee reviews.
+This project was designed to help job hunters gain a better understanding of overall employee sentiment by looking at Glassdoor reviews from present and past employees. 
 
-The web app that I created is called Glassy Crawl, and has dual functionality. Users can search for companies based on certain attributes such as 
+The web app that I created is called Glassy Crawl, and has dual functionality. Users can search for companies based on certain attributes such as work life balance, great coworkers or free lunches. 
 
 ###The Data Collection Process
 
@@ -17,10 +17,10 @@ I utilized a TF-IDF Vectorizer with 15,000 features in order to create my model.
 
 ###The code
 
-Python Libraries used include Sklearn, Pandas, NLTK, Flask
+The code for this project was written primarily in python, leveraging the following libraries: sklearn, pandas, numpy, NLTK, and wordcloud. On the web development side, HTML, CSS, Javascript, Flask, and Twitter Bootstrap were used to build out the web app. 
 
-Through the course of the project, I learned a lot about web development using HTML, CSS, JavaScript and Python Flask.
-
-
+###Using GlassyCrawl
+1. By Attribute - type one or more attributes (separated by commas) that you are looking for in your next employer.
+2. By Employer - search for employers within the database. Be sure to select the employer from the dropdown menu that populates.
 
 ![alt text](https://github.com/tomakant/glassycrawl/blob/master/static/Glassdoor.png "Glassdoor")
