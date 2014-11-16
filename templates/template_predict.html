@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
@@ -10,10 +11,28 @@
 
 <style type="text/css">
    body {background-image: url("static/blue.jpg");}
-   h2, td {color:white;}
-   table {background-color:rgba(55, 55, 55, 0.55);
+   h2, h5, td {color:#FFFFFF;
+                margin:20px;}
+   table {background-color:rgba(55, 55, 55, 0.85);
    			}
+
+
+  a:link {
+    color: #FFFFFF ;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration:underline;
+}
+  a:visited {
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
 </style>
+
 
 <style type="text/css">
     .bs-example{
@@ -24,6 +43,7 @@
 </head>
 <body>
 	<p><h2> Here are the top ten companies by {{ title }} : </h2></p>
+  <p><h5>Click on employer to launch Google Search and learn more!</h5></p>
 <div class="bs-example">
 	<table class="table">
 		<thead>
@@ -35,47 +55,251 @@
 		</thead>
 		<tr>
 			<td>1</td>
-			<td>{{p1}}</td>
+			<td><a href ="https://www.google.com/search?q={{p1}}" target="_blank">{{p1}}</a></td>
 		</tr>
 		<tr>
 			<td>2</td>
-			<td>{{p2}}</td>
+			<td><a href="https://www.google.com/search?q={{p2}}" target="_blank">{{p2}}</td>
 		</tr>
 		<tr>
 			<td>3</td>
-			<td>{{p3}}</td>
+			<td><a href="https://www.google.com/search?q={{p3}}" target="_blank">{{p3}}</td>
 		</tr>
 		<tr>
 			<td>4</td>
-			<td>{{p4}}</td>
+			<td><a href="https://www.google.com/search?q={{p4}}" target="_blank">{{p4}}</td>
 		</tr>
 		<tr>
 			<td>5</td>
-			<td>{{p5}}</td>
+			<td><a href="https://www.google.com/search?q={{p5}}" target="_blank">{{p5}}</a></td>
 		</tr>
 		<tr>
 			<td>6</td>
-			<td>{{p6}}</td>
+			<td><a href="https://www.google.com/search?q={{p6}}" target="_blank">{{p6}}</a></td>
 		</tr>
 		<tr>
 			<td>7</td>
-			<td>{{p7}}</td>
-		</tr>
+			<td><a href="https://www.google.com/search?q={{p7}}" target="_blank">{{p7}}</a></td>
+		</tr> 
 		<tr>
 			<td>8</td>
-			<td>{{p8}}</td>
+			<td><a href="https://www.google.com/search?q={{p8}}" target="_blank">{{p8}}</a></td>
 		</tr>
 		<tr>
 			<td>9</td>
-			<td>{{p9}}</td>
+			<td><a href="https://www.google.com/search?q={{p9}}" target="_blank">{{p9}}</a></td>
 		</tr>
 		<tr>
 			<td>10</td>
-			<td>{{p10}}</td>
+			<td><a href="https://www.google.com/search?q={{p10}}" target="_blank">{{p10}}</a></td>
 		</tr>
 	</table>
 </div>	
+
+<a href="http://0.0.0.0:7000"><center><img src="static/home.jpeg" alt="Go Home" style="width:80px;height:80px"></center></a>
+
 	   <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+<script>
+var companies = ['A Federal Credit Union', 'A T Kearney', 'AA Credit Union', 'ADP',
+       'AEP', 'AHS', 'ALDI', 'AMD', 'AMLI Residential', 'ARAMARK',
+       'ARAMARK Uniform and Career Apparel', 'AT and T', 'ATB Financial',
+       'AVANIR Pharmaceuticals', 'Acceller', 'Accenture', 'Accor',
+       'Accruent', 'Adobe', 'Adobe Systems India', 'Aerotek', 'Agoda',
+       'Airbnb', 'Alaska Airlines', 'Alberta Health Services',
+       'AllConnect com', 'Alliance Residential', 'Amazon India',
+       'Amazon com', 'Amdocs', 'American Airlines', 'American Express',
+       'Amgen', 'Amovius', 'Anadarko Petroleum', 'Apex Systems',
+       'AppDynamics', 'Apple', 'Applebee s', 'Arcurve', 'Arista Networks',
+       'Arthur D Little', 'Ashton Woods Homes', 'AstraZeneca',
+       'Austin Focus', 'Autodesk', 'Autonomy', 'Avanade', 'BCD Travel',
+       'BGT Partners', 'BHP Billiton', 'BJ s Wholesale Club',
+       'BMO Financial Group', 'BP', 'BT', 'Bain and Company',
+       'Baker Hughes', 'Bank of America', 'Bazaarvoice', 'Beazer Homes',
+       'Bechtel', 'Becker and Poliakoff', 'Berkeley College', 'Best Buy',
+       'Bill and Melinda Gates Foundation', 'BlackBerry', 'BlackRock',
+       'Blackbaud', 'Bloomberg L P', 'Bloomingdale s', 'Booking com',
+       'Booz Allen Hamilton', 'Booz and Company',
+       'Boston Consulting Group', 'Box', 'Brand Institute', 'Bridgevine',
+       'Broadcom', 'Brocade Communications', 'Burger King', 'CDW', 'CGG',
+       'CIBC', 'CWS Apartment Homes',
+       'California Department of Motor Vehicles', 'Canadian Natural',
+       'Canadian Western Bank', 'Capgemini',
+       'Capgemini Business Services India', 'Capgemini Consulting',
+       'Capstone Consultants', 'CareerBuilder', 'Carnival Corporation',
+       'Carolinas HealthCare System', 'Cashcall', 'Celebrity Cruises',
+       'Cenovus', 'Centex', 'Centex Homes', 'Century Communities',
+       'CenturyLink', 'Ceridian', 'Cerner', 'Charter Communications',
+       'Charter Schools USA', 'Cherry Creek Mortgage', 'Chevron',
+       'Chicago Bridge and Iron', 'Chick fil A', 'Chipotle', 'Cintas',
+       'Cisco Systems', 'Cisco Systems India', 'Citi', 'Citrix Systems',
+       'City of Calgary', 'City of Edmonton', 'Clark Construction Group',
+       'Classic Vacations', 'Clearlink', 'Clickspring Design', 'Cobalt',
+       'Cognizant Technology Solutions', 'Columbia Sportswear',
+       'Columbia University', 'Comcast', 'Concentrix', 'ConocoPhillips',
+       'Construction Industry Service Corporation', 'Continental Airlines',
+       'Convergys', 'Converse', 'Cornerstone OnDemand', 'Costco Wholesale',
+       'Coupons com', 'Covenant Health Canada', 'Cox Communications',
+       'Credit Suisse', 'Crescent Point Energy', 'Crispin Porter',
+       'D R Horton', 'D R Horton Schuler', 'DHI Mortgage', 'DISH',
+       'DPR Construction', 'David Weekley Homes', 'Dell', 'Deloitte',
+       'Delta Air Lines', 'Deutsche Bank', 'Devon Energy', 'Digitalmojo',
+       'Digitas', 'Direct Energy', 'Disney Parks and Resorts', 'Divestco',
+       'Drees Homes', 'Dropbox', 'Duke Energy', 'EMC', 'EOG',
+       'EPIC Information Solutions', 'EPIC Systems', 'EPIC Systems Inc',
+       'EY', 'Eastman Chemical', 'Eastwood Homes', 'Edelman',
+       'Educational Policy Improvement Center', 'Egencia',
+       'Electronic Data Systems', 'Elephant Group', 'Enbridge', 'Encana',
+       'Enterprise Rent A Car', 'Envoy Airlines', 'Epic Health Services',
+       'Epic Software', 'Epic Systems Corporation', 'Era Living',
+       'Eventbrite', 'Evernote', 'ExactTarget Marketing Cloud', 'Exelon',
+       'Expedia', 'Expedia CruiseShipCenters', 'Expedia Local Expert',
+       'Expedia Media', 'ExpressJet Airlines', 'ExxonMobil',
+       'FCm Travel Solutions', 'Facebook', 'Fast Enterprises', 'FedEx',
+       'FetchBack', 'Fischer Homes', 'Flipkart com',
+       'Florida International University', 'Florida Power and Light',
+       'Fluor', 'Freescale Semiconductor', 'G and K Services', 'GE',
+       'GE Global Research', 'GameStop', 'Gartner', 'Geek Squad',
+       'Gehan Homes', 'Genentech', 'Gilbane Building Company', 'Glassdoor',
+       'GlaxoSmithKline', 'Global Insight', 'Global Response',
+       'GlobalData', 'GlobalSpec', 'Goldman Sachs', 'Google',
+       'Government of Alberta', 'Grant Thornton', 'Greystar', 'Groupon',
+       'Guavus', 'Guidewire', 'HCL Technologies', 'HIRED MN',
+       'HP Enterprise Services', 'Halliburton',
+       'Heartland Payment Systems', 'Heitman',
+       'Hensel Phelps Construction', 'Hertz', 'Hewlett Packard',
+       'Hewlett Packard GlobalSoft', 'Highland Homes', 'Hilton Worldwide',
+       'Hired', 'HomeAway', 'Hotels com', 'Hotwire',
+       'Hotwire Communications', 'Houghton Mifflin Harcourt', 'Hubspot',
+       'Hulu', 'Husky', 'Husky Energy', 'Hyatt', 'Hydro One', 'IBM',
+       'IBM India', 'IBM Research', 'IHS', 'IHS CERA', 'IHS Jane s',
+       'INDEE', 'Imperial Oil', 'InMobi', 'Inbound Call Experts', 'Indeed',
+       'Infinity Sales Group', 'Informa Healthcare', 'Informatica',
+       'Infosys', 'Insight', 'Insight Global', 'Institut Pasteur',
+       'Intel Corporation', 'Interactive Intelligence',
+       'Interior Health Authority', 'Intuit', 'J F Shea', 'J P Morgan',
+       'JHM Hotels', 'Jabong com', 'JetBlue', 'John Deere',
+       'John Wieland Homes', 'Johnson and Johnson', 'Juniper Networks',
+       'K Hovnanian Homes', 'KB Home', 'KPMG International', 'KPMG US',
+       'Kaiser Permanente', 'Kiewit Corporation', 'Kmart', 'Kohl s',
+       'L E K Consulting', 'Larsen and Toubro', 'Leapfrog Online',
+       'LenderLive Network', 'Lennar', 'Lennar Urban',
+       'Liberty Power Corp', 'Lincoln Property Company', 'LinkedIn',
+       'Lowe s', 'Lyft', 'M I Homes', 'MDC Holdings', 'MEG Energy',
+       'MINDBODY', 'Macy s', 'Main Street Hub', 'MakeMyTrip',
+       'Marathon Oil', 'Marriott', 'Marshall Advertising',
+       'Marvell Technology', 'McCarthy Building', 'McDonald s',
+       'McDonald s Canada', 'McGladrey LLP', 'McKinsey and Company',
+       'MediaMath', 'MediaTek', 'Mercer', 'Merck', 'Meritage Homes',
+       'Merrill Lynch', 'MetroPCS', 'Microsoft', 'Mitchell International',
+       'Monsanto Company', 'Monster Com India', 'Monster Energy',
+       'Monster Government Solutions', 'Monster Inc',
+       'Monster Technologies', 'Monster Worldwide', 'Morgan Stanley',
+       'Motley Fool', 'MyTechHelp', 'Myntra', 'NBCUniversal', 'NCS', 'NDS',
+       'NIKE', 'NPD', 'NRG Energy', 'NVIDIA', 'NVR', 'NVhomes',
+       'National Instruments', 'National Oilwell Varco',
+       'Nationstar Mortgage', 'Neiman Marcus', 'NetApp', 'Netflix',
+       'New American Mortgage', 'New Balance', 'NewCloud Networks',
+       'Newmark Homes', 'Nexen', 'Nordstrom', 'Nordstrom Rack',
+       'OMG Tech Help', 'Oakley', 'Occidental Petroleum', 'Office Depot',
+       'Ogilvy and Mather', 'Olacabs', 'Oliver Wyman', 'OneWest Bank',
+       'Ontario Power Generation', 'Optima Healthcare Solutions', 'Oracle',
+       'Orbitz Worldwide', 'OutboundEngine', 'PFC Energy', 'PHH Mortgage',
+       'PUMA', 'Palo Alto Research Center', 'Panera Bread',
+       'Pason Systems', 'PayPal', 'Paychex',
+       'Paychex Benefit Technologies', 'Paychex Insurance Agency',
+       'Paycom', 'Paylocity', 'Pegasystems', 'PennWest', 'PepsiCo',
+       'Perry Homes', 'PetSmart', 'Pfizer', 'Pinterest', 'Pizza Hut',
+       'Plaza Home Mortgage', 'Postmates', 'Power Home Remodeling Group',
+       'Priceline com', 'Procter and Gamble', 'Publix',
+       'Pulte Building Systems', 'Pulte Homes', 'Pulte Mortgage', 'PwC',
+       'QVC', 'Qualcomm', 'Quicken Loans', 'REI', 'Rackspace',
+       'Reachlocal', 'Red Hat', 'Red Venture Consultants', 'Red Ventures',
+       'Redbus', 'Reebok', 'RetailMeNot', 'Richmond American Homes',
+       'Riverbed Technology', 'Riverstone Residential Group',
+       'Roland Berger', 'Royal Bank of Canada', 'Royal Caribbean Cruises',
+       'Royal Dutch Shell', 'Ryan Homes', 'SAIC', 'SAP', 'SMART',
+       'SMART Technologies', 'STMicroelectronics', 'SYKES', 'Sabre',
+       'Saks Fifth Avenue', 'Salesforce', 'Sam s Club',
+       'Samsung India Software Operations',
+       'San Francisco International Airport', 'Saveology com',
+       'Schlumberger', 'Scotiabank', 'SecureWorks', 'SeisWare', 'Sephora',
+       'Servus Credit Union', 'Shaw Communications',
+       'Shea Apartment Communities', 'Shea Homes', 'Shea Properties',
+       'Shell', 'Shell Canada', 'Shred it International', 'SideCar',
+       'Signpost', 'Simon Property Group', 'Simply Hired',
+       'Simpson Housing', 'Simpson Property Group', 'SirsiDynix', 'Sitel',
+       'Skanska', 'Skanska USA Building', 'Slalom Consulting',
+       'SmartBear Software', 'Snapdeal', 'Software Advice', 'SolarCity',
+       'SolarWinds', 'Southwest Airlines', 'SpareFoot', 'Spiceworks',
+       'Spil Games', 'Spirit Airlines', 'Spredfast', 'Sprint', 'Square',
+       'SquareTrade', 'Standard Pacific', 'Starbucks',
+       'Stream Global Services', 'StubHub', 'Subway', 'Suncor',
+       'Surgeon s Advisor', 'Susquehanna International Group LLP',
+       'Symantec', 'Syncrude', 'T Mobile', 'TD Bank', 'TEKsystems',
+       'TELUS', 'TIAA CREF', 'TOTAL', 'Taco Bell', 'Talisman Energy',
+       'Target', 'Tata Consultancy Services', 'Taylor Morrison',
+       'TaylorMade adidas Golf', 'Tech Mahindra', 'Techzilla', 'TeleTech',
+       'Teleperformance', 'Teleperformance India', 'Texas Instruments',
+       'The Home Depot', 'The Ryland Group', 'The Zimmerman Agency',
+       'Thomson Reuters', 'Time Warner Cable', 'Toll Brothers', 'TomTom',
+       'TopGolf', 'Townsquare Interactive', 'TradeDoubler', 'Trafigura',
+       'TransCanada', 'Travelocity', 'Travelzoo', 'Trendmaker Homes',
+       'TriNet Group', 'TripAdvisor', 'True Action', 'Trulia',
+       'Turner Construction', 'Twitter', 'UBS', 'UNC Charlotte', 'UPS',
+       'US Airways', 'US Indian Health Service', 'USAA', 'Uber',
+       'Ultimate Software', 'Under Armour', 'UniFirst', 'Unilever',
+       'United Airlines', 'UnitedHealth Group', 'University of Calgary',
+       'University of Miami', 'University of Washington',
+       'Urban Lending Solutions', 'VMware', 'Vanguard', 'Vector Marketing',
+       'Veeva Systems', 'VendorNet', 'Venere com', 'Verengo Solar',
+       'Verizon', 'Verizon Data Services India', 'Verizon Wireless',
+       'Virgin America', 'Visa Inc', 'Vodafone', 'Volusion',
+       'W J Bradley Mortgage Capital', 'WalMart Canada', 'Walgreens',
+       'Walmart', 'Walmart eCommerce', 'Walt Disney Company', 'Wayfair',
+       'Weatherby Locums', 'Weatherford', 'Wells Fargo', 'Wendy s',
+       'WestJet', 'Westinghouse', 'Weyerhaeuser', 'Whitefence',
+       'Whiting Turner', 'Whole Foods Market', 'Wipro', 'Wood Mackenzie',
+       'Workday', 'XING AG', 'Xerox', 'Xilinx', 'Yahoo', 'Yelp', 'Yext',
+       'Yodel', 'Yodle', 'Zillow', 'Zimmerman Advertising', 'ZipRecruiter',
+       'ZocDoc', 'Zomato', 'adidas Group', 'butter LONDON', 'e Dialog',
+       'eBay Enterprise', 'eBay Inc', 'geoLOGIC Systems', 'hCentive',
+       'hibu', 'ibibo', 'trivago', 'zulily'];
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substrRegex;
+ 
+    // an array that will be populated with substring matches
+    matches = [];
+ 
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+ 
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        // the typeahead jQuery plugin expects suggestions to a
+        // JavaScript object, refer to typeahead docs for more info
+        matches.push({ value: str });
+      }
+    });
+ 
+    cb(matches);
+  };
+};
+
+  $('.typeahead').typeahead({
+  minLength: 1,
+  hint: true,
+  highlight: true,
+},
+{
+  name: 'companies',
+  source: substringMatcher(companies)
+});
+</script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 	<meta charset="UTF-8">
-	<title>Zipfian Capstone Project</title>
+	<title>Glassy Crawl</title>
 
 <style>
   /* custom font! */
@@ -17,6 +17,28 @@
 
 /* scaffolding */
 /* ----------- */
+
+#ajaxloader
+{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 8px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 25px 2px #eee;
+}
+#ajaxloader
+{
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin
+{
+  from { transform: rotate(0deg);   opacity: 0.2; }
+  50%  { transform: rotate(180deg); opacity: 1.0; }
+  to   { transform: rotate(360deg); opacity: 0.2; }
+}
 
 html {
   overflow-y: scroll;
@@ -190,7 +212,7 @@ p + p {
   /*body { background: lightblue;}*/
   body {background-image: url("static/blue.jpg");}
   div {background-color:rgba(55, 55, 55, 0.75);}
-  h1, h4, a { margin:10px;
+  h1, h4, a, h6 { margin:10px;
         color:white;}
   form { 
     margin: 10px;
@@ -225,7 +247,8 @@ p + p {
 
 <div>
       <h1>Word Clouds</h1>
-        <h4>Return top words within employee reviews for employers within the database!</h4>
+        <h4>Return frequently occurring words for employee reviews within the database!</h4>
+        <h6>(Note: Word clouds take about 15-20 seconds to generate) </h6>
     </div>
     <div class='wordcloud'>
         <form action="/wordcloud" method='POST' >

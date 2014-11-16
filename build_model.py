@@ -28,7 +28,7 @@ y = list(y)
 # Process our data
 
 # Create our vectorizer
-vectorizer = TfidfVectorizer(stop_words='english', max_features=10000)
+vectorizer = TfidfVectorizer(ngram_range=(1, 3), stop_words='english', max_features=15000)
 
 # Fit and transform our feature data
 vectorized_X  = vectorizer.fit_transform(X)

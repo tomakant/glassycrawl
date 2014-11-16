@@ -13,7 +13,8 @@
 <style type="text/css">
    body {background: black;}
    /*body {background-image: url("static/blue.jpg");}*/
-   h2, h3 {color:white;}
+   h2, h3, h6 {color:white;
+    margin:10px;}
    table {background-color:rgba(55, 55, 55, 0.55);}
 </style>  
 
@@ -55,12 +56,12 @@ html {
 /* base styles */
 /* ----------- */
 
-html {
+/*html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 1.2;
   color: #333;
-}
+}*/
 
 a {
   color: #03739c;
@@ -82,10 +83,10 @@ a:hover {
   color: #999;
 }
 
-.title,
+/*.title,
 .example-name {
   font-family: Prociono;
-}
+}*/
 
 p + p {
   margin: 30px 0 0 0;
@@ -114,7 +115,7 @@ p + p {
   margin: 50px 0;
 }
 
-.typeahead,
+/*.typeahead,
 .tt-query,
 .tt-hint {
   width: 396px;
@@ -127,7 +128,7 @@ p + p {
      -moz-border-radius: 8px;
           border-radius: 8px;
   outline: none;
-}
+}*/
 
 .typeahead {
   background-color: #fff;
@@ -212,7 +213,7 @@ p + p {
   form { 
     margin: 10px;
   }
-  .tt-dataset-companies, .tt-dataset-companies div {
+/*  .tt-dataset-companies, .tt-dataset-companies div {
     background: white;
   }
 .attributes {
@@ -220,6 +221,21 @@ p + p {
   }
 .wordcloud {
 
+}*/
+
+
+ a:link {
+    color: #FFFFFF ;
+    font-weight: bold;
+    text-decoration:underline;
+}
+
+ a:visited {
+    color: #FFFFFF;
+}
+
+h4, .h4 {
+  color: white;
 }
 
 </style>
@@ -228,18 +244,24 @@ p + p {
 
 </head>
 <body>
-	<p><h2> These phrases appeared the most in {{employer}} reviews : </h2></p>
+	<p><h2> <center>Pros and cons to working for {{employer}}: </center></h2></p>
 
 <div class="bs-example">
-    <img src="{{pic}}" alt="word cloud" style="width:500px;height:375px"> 
+    <center><img src="{{pic_pro}}" alt="word cloud" style="width:450px;height:350px" hspace = 50 title ="Pros to working at {{employer}}">
+
+    <img src="{{pic_con}}" alt="word cloud" style="width:450px;height:350px" title = "Cons to working at {{employer}}"></center>
 </div>  
+
+<h4><a href="https://www.google.com/search?q={{employer}}" target="_blank"><center>Click here to learn more about {{employer}}</center></a></h4>
 	
-  <h3>Try another company!</h3>
-    <div class='wordcloud'>
+  <center><h4>Or search for another company!</h4></center>
+    <center><div class='wordcloud'>
         <form action="/wordcloud" method='POST' >
                 <input type="text" name="user_input" placeholder="Enter company name here" style="width: 500px; padding:2px" autocomplete = "off" class='typeahead'/>
                 <input type="submit" class="btn btn-primary" />
-    </div>
+    </div></center>
+
+    <a href="http://0.0.0.0:7000"><center><img src="static/home.jpeg" alt="Go Home" style="width:80px;height:80px"></center></a>
 
 	   <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

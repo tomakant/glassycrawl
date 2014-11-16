@@ -42,7 +42,7 @@ def featurize():
     n = 100   # number of articles per topic
     employer = request.form['user_input']
     ftopic = df[df['company']==employer].head(n)
-    text = list(ftopic['cons'].values)
+    text = list(ftopic['pros'].values)
     text = " ".join(text)
     text = re.sub('[^\w\s]+', ' ', text).replace('\n', ' ')
    # tokenize into words
@@ -53,7 +53,7 @@ def featurize():
    # some extra stop words not present in stopwords
     stop = stopwords.words('english')
     stop += ['said', 'would', 's', 'also', 'U', 'mr', 're', 'may', 'one', 'two', 'buy', 'much', \
-            'take', 'might', 'say', 'new', 'year', 'many','etc', 'll']
+            'take', 'might', 'say', 'new', 'year', 'many','etc', 'll', 've']
     stop += str(employer)
 
     tokens = [token for token in tokens if token not in stop]
@@ -64,10 +64,35 @@ def featurize():
     plt.figure(figsize=(50,30))
     plt.imshow(wordcloud)
     plt.axis("off")
-    name = 'static/' +str(employer) + '.png'
+    name = 'static/' +str(employer) + '-pros.png'
     pic = plt.savefig(name, bbox_inches='tight',transparent = True)
 
-    return render_template('template_wordcloud.html', pic = name, employer=employer)
+    text2 = list(ftopic['cons'].values)
+    text2 = " ".join(text2)
+    text2 = re.sub('[^\w\s]+', ' ', text2).replace('\n', ' ')
+   # tokenize into words
+    tokens2 = [word.lower() for sent in sent_tokenize(text2) \
+             for word in word_tokenize(sent)]
+   # remove stopwords
+
+   # some extra stop words not present in stopwords
+    stop2 = stopwords.words('english')
+    stop2 += ['said', 'would', 's', 'also', 'U', 'mr', 're', 'may', 'one', 'two', 'buy', 'much', \
+            'take', 'might', 'say', 'new', 'year', 'many','etc', 'll', 've']
+    stop2 += str(employer)
+
+    tokens2 = [token for token in tokens2 if token not in stop2]
+   # remove words less than three letters
+    tokens2 = [word for word in tokens2 if len(word) >= 2]
+    string2 = " ".join(tokens2)
+    wordcloud2 = WordCloud(font_path='/Library/Fonts/Arial Rounded Bold.ttf').generate(string2)
+    plt.figure(figsize=(50,30))
+    plt.imshow(wordcloud2)
+    plt.axis("off")
+    name2 = 'static/' +str(employer) + '-cons.png'
+    pic2 = plt.savefig(name2, bbox_inches='tight',transparent = True)
+
+    return render_template('template_wordcloud.html', pic_pro = name, pic_con=name2, employer=employer)
 
 # def wordcloud():
     
